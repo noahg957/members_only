@@ -1,0 +1,29 @@
+
+  
+  
+    <% @posts.each do |post| %>
+    <% user_signed_in? ? author = post.user.name : author = "Anonymous" %>
+    <% user_signed_in? ? username = "@#{post.user.username}" : username = "@anonymous" %>
+               <div class='tile is-child box '>
+            <article class="media has-border-width-3">
+              <div class="media-left has-text-white-ter">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-square-o fa-stack-2x"></i>
+                  <i class="fa fa-user fa-stack-1x"></i>
+                </span>
+              </div>
+              <div class="media-content">
+                <div class="content">
+                  <p>
+                    <strong class='is-size-4 has-text-white-ter'><%=author%></strong>
+                    <small class='is-size-6 has-text-white-ter'><%=username%></small>
+                    <p><%=post.body%></p>
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+    <% end %>
+
+  
+  

@@ -1,0 +1,49 @@
+<% if user_signed_in?%>
+<%= form_with(model: @post, local: true) do |form| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :body, 'New Post', class: 'label' %>
+    <%= form.text_area :body, class: 'textarea'%>
+  </div>
+
+  <div class="actions">
+    <%= form.submit :Submit, class: 'button is-link'%>
+  </div>
+  
+<% end %>
+<% else %>
+<fieldset disabled>
+  <div class="field">
+  <label class="label">Must sign in to post</label>
+  <div class="control">
+    <textarea class="textarea" placeholder="Textarea"></textarea>
+  </div>
+</div>
+</fieldset>
+
+<div class="field is-grouped">
+<div class="control">
+    <%=link_to  'Sign In', new_user_session_path, class: "button is-link" %>
+  </div>
+  <fieldset disabled>
+  <div class="control">
+    <button class="button is-link">Create Post</button>
+  </div>
+  
+</div>
+</fieldset>
+
+
+<% end %>
+

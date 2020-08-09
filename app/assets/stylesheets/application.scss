@@ -12,4 +12,34 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
+
  */
+ @import 'bulma-helpers/css/bulma-helpers.min.css';
+ @import 'bulma';
+ .notification:not(:last-child) {
+  margin-bottom: 0;
+}
+body {
+  background-color: hsl(0, 0%, 14%);
+  padding: 0px;
+  margin: 0px;
+}
+#main_section {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+#brand {
+  text-decoration: none;
+}
+#global-notification {
+  margin-bottom: 0;
+  border-radius: 0;
+}
+.notification:not(:last-child) {
+  margin-bottom: 0;
+}
+// #follow {
+//   border-width: 1rem !important;
+// }

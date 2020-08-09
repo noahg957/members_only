@@ -1,5 +1,7 @@
 {
   "name": "members_only",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bulma-helpers": "^0.3.12"
+  }
 }

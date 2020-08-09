@@ -1,0 +1,33 @@
+<%unless user_signed_in?%>
+  <div class="tile is-vertical is-parent">    
+    <div class='container'>
+        <div id='follow'class='tile is-child box notification is-primary has-border-width-3'>
+          <div class='content'>
+            <div class='title is-2 has-text-weight-semibold '> Who to follow:</div>
+          </div>
+        </div>
+        <%for i in 0..4 do%>
+          <div class='tile is-child box has-background-black-ter'>
+            <article class="media has-border-width-3">
+              <div class="media-left has-text-white-ter">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-square-o fa-stack-2x"></i>
+                  <i class="fa fa-user fa-stack-1x"></i>
+                </span>
+              </div>
+              <div class="media-content">
+                <div class="content">
+                  <p>
+                    <strong class='is-size-4 has-text-white-ter'>Anonymous</strong>
+                    <small class='is-size-6 has-text-white-ter'>@anonymous</small>
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+          <% end%>
+        </div>
+      </div>
+    </div>
+  </div>
+<%end%>
